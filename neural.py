@@ -1,4 +1,4 @@
-import numpy as np
+import cupy as np  # CuPy-t használjuk NumPy helyett, GPU-n fut
 
 ciklus_szam = 10000
 def sigmoid(x):
@@ -96,4 +96,4 @@ for asd in range(ciklus_szam):
 
  # Nyomtatás az iterációk alatt
     if ciklus_szam % 1000 == 0:  # Nyomtasd ki 1000 iterációnként a veszteséget
-         print(f"Epoch {ciklus_szam}, Loss: {loss}")
+         print(f"Epoch {ciklus_szam}, Loss: {loss.get()}")
